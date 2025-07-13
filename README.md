@@ -79,6 +79,21 @@ The installer will:
 
 **Customization**: You can replace any MP3 files in the `voice/` folder with your own audio files. The stop hook will randomly play from the available files, while the notification hook uses `what_is_your_choice.mp3`.
 
+## Claude Code Configuration
+
+After installation, you need to configure Claude Code to use the hooks. Add the following to your `~/.claude/settings.json`:
+
+```json
+{
+  "hooks": {
+    "stop": "~/.claude/script/stop_voice.sh",
+    "notification": "~/.claude/script/notification_voice.sh"
+  }
+}
+```
+
+If your `settings.json` already exists, just add the `hooks` section to the existing JSON structure.
+
 ## Important Notes
 
 ⚠️ **You must restart Claude Code after installation** for the hooks to take effect.
@@ -137,6 +152,21 @@ chmod +x install.sh
   - `what_is_your_choice.mp3` (알림용)
 
 **커스터마이징**: `voice/` 폴더의 MP3 파일들을 원하는 오디오 파일로 교체할 수 있습니다. stop hook은 사용 가능한 파일 중 랜덤으로 재생하며, notification hook은 `what_is_your_choice.mp3`를 사용합니다.
+
+## Claude Code 설정
+
+설치 후 Claude Code가 hooks를 사용하도록 설정해야 합니다. `~/.claude/settings.json` 파일에 다음을 추가하세요:
+
+```json
+{
+  "hooks": {
+    "stop": "~/.claude/script/stop_voice.sh",
+    "notification": "~/.claude/script/notification_voice.sh"
+  }
+}
+```
+
+`settings.json` 파일이 이미 존재한다면, 기존 JSON 구조에 `hooks` 섹션만 추가하면 됩니다.
 
 ## 중요 사항
 
